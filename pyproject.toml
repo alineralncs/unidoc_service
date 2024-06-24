@@ -26,6 +26,7 @@ scikit-learn = "^1.4.2"
 pandas = "^2.2.2"
 alembic = "^1.13.1"
 prettytable = "^3.10.0"
+matplotlib = "^3.9.0"
 
 
 [build-system]

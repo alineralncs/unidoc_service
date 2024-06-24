@@ -107,3 +107,11 @@ def get_document_content(query: str, db: Session = Depends(get_session)):
 
     recommendations = recommendation_service.all_recommenders_content()
     return recommendations
+
+
+@router.get('/normalizeDocuments/{query}')
+def normalize_documents(query: str, db: Session = Depends(get_session)):
+    all_documents = db.query(DocumentModel).all()
+    normalized = RecommendationService(query, all_documents)
+    no = normalized.normalize_documents()
+    return normalized
